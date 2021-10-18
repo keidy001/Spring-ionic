@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title>Accueil</ion-title>
+    <ion-buttons slot="start">
+      <app-home></app-home>
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card name="card">
+    <ion-card-header>
+      <ion-avatar>
+        <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+      </ion-avatar>
+    </ion-card-header>
+    <ion-cadr-content>
+      <ion-item>
+  <ion-label>Bienvenue {{userinfo.nom}} {{userinfo.prenom}} </ion-label>
+</ion-item>
+<p style="margin-left:5%;">
+  <ion-label >Vous etes connecté avec le login :<br><strong>{{userinfo.login}}</strong> </ion-label><br><br>
+  <ion-label>Date de connexion</ion-label><br>
+  <ion-datetime displayFormat="DD-MM-YYYY / HH:mm" pickerFormat="HH:mm" [(ngModel)]="myDate"></ion-datetime>
+</p>
+  </ion-cadr-content>
+</ion-card>
+</ion-content>

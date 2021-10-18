@@ -1,0 +1,29 @@
+<ion-menu menuId="main-menu" content-id="main">
+  <ion-header>
+    <ion-toolbar color="dark">
+      <ion-title>Menu</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content >
+    <ion-list>
+      <ion-menu-toggle>
+      <ion-item routerLink="/bienvenue" color="warning">
+        <ion-icon name="home" slot="start"></ion-icon>
+        <ion-label>Accueil</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item routerLink="/apprenants" color="warning">
+        <ion-icon name="list" slot="start"></ion-icon>
+        <ion-label>Apprenants</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    <ion-menu-toggle>
+      <ion-item (click)="logout()"routerLink="/login" color="warning">
+        <ion-icon name="log-out" slot="start"></ion-icon>
+        <ion-label>Deconnexion</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+    </ion-list>
+  </ion-content>
+</ion-menu>

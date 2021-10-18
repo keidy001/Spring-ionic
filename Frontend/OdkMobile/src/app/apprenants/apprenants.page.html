@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar color="warning">
+    <ion-title >Liste des Apprenants</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+  <ion-item *ngFor="let apprenant of list " color="dark">
+    <ion-avatar style="margin-right: 4%;">
+      <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+    </ion-avatar>
+{{apprenant.nom}} {{apprenant.prenom}} {{apprenant.telephone}}
+</ion-item>
+</ion-content>
