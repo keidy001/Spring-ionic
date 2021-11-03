@@ -1,53 +1,51 @@
 package com.OdkApprenant.demo.model;
+import com.OdkApprenant.demo.model.ApprenantStatus;
 
-import javax.persistence.Column;
+import java.time.LocalDate;
+import javax.persistence.Id;
+
+//import lombok.AllArgsConstructor;
+//import lombok.Data;
+//import lombok.NoArgsConstructor;
+
+//import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
+//import javax.persistence.Table;
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
 @Entity
-@Table(name = "Apprenants")
+//@Table(name = "Apprenants") 
 public class Apprenant {
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int id;
-	@Column(name = "nom")
-	private String nom;
-	@Column(name = "prenom")
-	private String prenom;
-	@Column(name = "age")
-	private int age;
-	@Column(name = "telephone")
-	private int telephone;
-	@Column(name = "email")
-	private String email;
-	@Column(name = "login")
-	private String login;
-	@Column(name = "password")
-	private String password;
-	@Column(name = "genre")
-	private String genre;
-	@Column(name = "ApprenantStatus")
-	private String ApprenantStatus;
-	@Column(name = "dateCreation")
-	private String dateCreation;
-	@Column(name = "dateModification")
-	private String dateModification;
-	
-	
+	private Long 	id;
+	private String 		nom;
+	private String 		prenom;
+	private Integer 	age;
+	private Integer 	telephone;
+	private String  	email;
+	private String  	login;
+	private String 		password;
+	private String 		genre;
+	@Enumerated(EnumType.STRING)
+	private ApprenantStatus		apprenantStatus;
+	private LocalDate	dateCreation;
+	private LocalDate	dateModification;
 	
 	
 	public Apprenant() {
 		super();
 	}
 
-
-
-
-	public Apprenant(String nom, String prenom, int age, int telephone, String email, String login, String password,
-			String genre, String apprenantStatus, String dateCreation, String dateModification) {
+	
+	public Apprenant(String nom, String prenom, Integer age, Integer telephone, String email, String login,
+			String password, String genre, ApprenantStatus apprenantStatus, LocalDate dateCreation, LocalDate dateModification) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -57,179 +55,84 @@ public class Apprenant {
 		this.login = login;
 		this.password = password;
 		this.genre = genre;
-		ApprenantStatus = apprenantStatus;
+		this.apprenantStatus = apprenantStatus;
 		this.dateCreation = dateCreation;
 		this.dateModification = dateModification;
 	}
-
-
-
-
-	public int getId() {
+	
+	
+	public Long getId() {
 		return id;
 	}
-
-
-
-
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
-
-
-
-
 	public String getNom() {
 		return nom;
 	}
-
-
-
-
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
-
-
-
-
 	public String getPrenom() {
 		return prenom;
 	}
-
-
-
-
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-
-
-
-
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
-
-
-
-
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
-
-
-
-
-	public int getTelephone() {
+	public Integer getTelephone() {
 		return telephone;
 	}
-
-
-
-
-	public void setTelephone(int telephone) {
+	public void setTelephone(Integer telephone) {
 		this.telephone = telephone;
 	}
-
-
-
-
 	public String getEmail() {
 		return email;
 	}
-
-
-
-
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-
-
-
 	public String getLogin() {
 		return login;
 	}
-
-
-
-
 	public void setLogin(String login) {
 		this.login = login;
 	}
-
-
-
-
 	public String getPassword() {
 		return password;
 	}
-
-
-
-
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
-
-
-
 	public String getGenre() {
 		return genre;
 	}
-
-
-
-
 	public void setGenre(String genre) {
 		this.genre = genre;
 	}
-
-
-
-
-	public String getApprenantStatus() {
-		return ApprenantStatus;
+	public  ApprenantStatus getApprenantStatus() {
+		return apprenantStatus;
 	}
-
-
-
-
-	public void setApprenantStatus(String apprenantStatus) {
-		ApprenantStatus = apprenantStatus;
+	public void setApprenantStatus(ApprenantStatus apprenantStatus) {
+		this.apprenantStatus = apprenantStatus;
 	}
-
-
-
-
-	public String getDateCreation() {
+	public LocalDate getDateCreation() {
 		return dateCreation;
 	}
-
-
-
-
-	public void setDateCreation(String dateCreation) {
+	public void setDateCreation(LocalDate dateCreation) {
 		this.dateCreation = dateCreation;
 	}
-
-
-
-
-	public String getDateModification() {
+	public LocalDate getDateModification() {
 		return dateModification;
 	}
-
-
-
-
-	public void setDateModification(String dateModification) {
+	public void setDateModification(LocalDate dateModification) {
 		this.dateModification = dateModification;
 	}
 	
 	
-
 }
